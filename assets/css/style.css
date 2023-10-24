@@ -1,3 +1,8 @@
+:root {
+    --light: #cdeaff;
+    --dark: #5cb7fa;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,7 +38,7 @@ main > div {
 main > div > div {
     width: calc(100% / 8);
     aspect-ratio: 1 / 1;
-    background-color: #cdeaff;
+    background-color: var(--light);
     position: relative;
 }
 
@@ -50,15 +55,15 @@ span {
 }
 
 main > div > div:nth-child(even) {
-    background-color: #5cb7fa;
+    background-color: var(--dark);
 }
 
 main > div:nth-child(even) > div:nth-child(odd) {
-    background-color: #5cb7fa;
+    background-color: var(--dark);
 }
 
 main > div:nth-child(even) > div:nth-child(even) {
-    background-color: #cdeaff;
+    background-color: var(--light);
 }
 
 main > div > div:hover:before {
