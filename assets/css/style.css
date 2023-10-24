@@ -43,7 +43,7 @@ span {
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 10px;
+    padding: 16%;
     background-origin: content-box;
     filter: sepia(1);
     cursor: grab;
@@ -151,4 +151,10 @@ main > div > div:hover:before {
 
 .black.king {
     background-image: url('../img/black/king.png');
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 0;
+    }
 }
