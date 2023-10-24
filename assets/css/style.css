@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: #eee;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    padding: 50px;
+}
+
+main {
+    border: 10px outset #2790d6;
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+main > div {
+    display: flex;
+}
+
+main > div > div {
+    width: calc(100% / 8);
+    aspect-ratio: 1 / 1;
+    background-color: #cdeaff;
+    position: relative;
+}
+
+span {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px;
+    background-origin: content-box;
+    filter: sepia(1);
+    cursor: grab;
+}
+
+main > div > div:nth-child(even) {
+    background-color: #5cb7fa;
+}
+
+main > div:nth-child(even) > div:nth-child(odd) {
+    background-color: #5cb7fa;
+}
+
+main > div:nth-child(even) > div:nth-child(even) {
+    background-color: #cdeaff;
+}
+
+main > div > div:hover:before {
+    content: "";
+    background: #d7e6ce;
+    width: 100%;
+    display: block;
+    height: 100%;
+    transition: 0.25s;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.selected:before {
+    content: "";
+    background: #26ee5294;
+    width: 100%;
+    display: block;
+    height: 100%;
+    transition: 0.25s;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.move:before {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    content: "";
+    background: #a8c5fb;
+    width: calc(100% - 0.5px);
+    display: block;
+    height: calc(100% - 0.5px);
+    transition: 0.25s;
+    position: absolute;
+    border: 0.1px solid #2642ee38;
+    left: 0;
+    top: 0;
+}
+
+.pawn {
+    background-image: url('../img/white/pawn.png');
+}
+
+.knight {
+    background-image: url('../img/white/knight.png');
+}
+
+.bishop {
+    background-image: url('../img/white/bishop.png');
+}
+
+.rook {
+    background-image: url('../img/white/rook.png');
+}
+
+.queen {
+    background-image: url('../img/white/queen.png');
+}
+
+.king {
+    background-image: url('../img/white/king.png');
+}
+
+.black {
+    filter: hue-rotate(124deg);
+}
+
+.black.pawn {
+    background-image: url('../img/black/pawn.png');
+}
+
+.black.knight {
+    background-image: url('../img/black/knight.png');
+}
+
+.black.bishop {
+    background-image: url('../img/black/bishop.png');
+}
+
+.black.rook {
+    background-image: url('../img/black/rook.png');
+}
+
+.black.queen {
+    background-image: url('../img/black/queen.png');
+}
+
+.black.king {
+    background-image: url('../img/black/king.png');
+}
