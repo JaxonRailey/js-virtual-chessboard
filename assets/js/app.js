@@ -48,7 +48,7 @@ cells.forEach((cell) => {
 pieces.forEach((elem) => {
     elem.addEventListener('click', function () {
         setTimeout(() => {
-            pieces.forEach((piece) => piece.classList.remove('selected'));
+            cells.forEach((cell) => cell.classList.remove('selected'));
             switch (elem.classList[0]) {
                 case 'pawn':   pawnMoves(elem);   break;
                 case 'knight': knightMoves(elem); break;
@@ -68,8 +68,7 @@ pieces.forEach((elem) => {
 cells.forEach((cell) => {
     cell.addEventListener('dragover', (e) => {
         e.preventDefault();
-        cells.forEach((c) => c.classList.remove('move'));
-        cells.forEach((c) => c.classList.remove('selected'));
+        cells.forEach((c) => c.classList.remove('move', 'selected'));
     });
 
     cell.addEventListener('drop', (e) => {
