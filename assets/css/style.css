@@ -80,7 +80,19 @@ main > div > div:hover:before {
 
 .selected:before {
     content: "";
-    background: #26ee5294;
+    background: #26ee5294 !important;
+    width: 100%;
+    display: block;
+    height: 100%;
+    transition: 0.25s;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.clicked:before {
+    content: "";
+    background: #53effaf4 !important;
     width: 100%;
     display: block;
     height: 100%;
@@ -95,7 +107,7 @@ main > div > div:hover:before {
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     content: "";
-    background: #a8c5fb;
+    background: #53f0fabd;
     width: calc(100% - 0.5px);
     display: block;
     height: calc(100% - 0.5px);

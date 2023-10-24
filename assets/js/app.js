@@ -42,13 +42,13 @@ for (let i = 0; i < 8; i++) {
 }
 
 cells.forEach((cell) => {
-    cell.addEventListener('click', () => cells.forEach((c) => c.classList.remove('move')));
+    cell.addEventListener('click', () => cells.forEach((c) => c.classList.remove('move', 'clicked')));
 });
 
 pieces.forEach((elem) => {
     elem.addEventListener('click', function () {
         setTimeout(() => {
-            cells.forEach((cell) => cell.classList.remove('selected'));
+            cells.forEach((cell) => cell.classList.remove('selected', 'clicked'));
             switch (elem.classList[0]) {
                 case 'pawn':   pawnMoves(elem);   break;
                 case 'knight': knightMoves(elem); break;
@@ -57,6 +57,7 @@ pieces.forEach((elem) => {
                 case 'rook':   rookMoves(elem);   break;
                 case 'queen':  queenMoves(elem);  break;
             }
+            elem.closest('div').classList.add('clicked');
         }, 1);
     });
 
@@ -68,7 +69,7 @@ pieces.forEach((elem) => {
 cells.forEach((cell) => {
     cell.addEventListener('dragover', (e) => {
         e.preventDefault();
-        cells.forEach((c) => c.classList.remove('move', 'selected'));
+        cells.forEach((c) => c.classList.remove('move', 'selected', 'clicked'));
     });
 
     cell.addEventListener('drop', (e) => {
@@ -79,7 +80,7 @@ cells.forEach((cell) => {
         }
     });
 
-    cell.addEventListener('click', (e) => {
+    cell.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         cell.classList.toggle('selected');
     });
